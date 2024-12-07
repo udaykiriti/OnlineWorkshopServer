@@ -14,10 +14,12 @@ public class WebConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**")
-                        .allowedOrigins("http://localhost:3000","https://online-workshop-nine.vercel.app")
-                        .allowedMethods("GET", "POST", "PUT", "DELETE")
-                        .allowedHeaders("*");
+                        .allowedOrigins("http://localhost:3000", "https://online-workshop-nine.vercel.app")
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")  // Allow OPTIONS method
+                        .allowedHeaders("*")
+                        .allowCredentials(true);  // Add this if your requests require credentials (like cookies or tokens)
             }
         };
     }
 }
+
