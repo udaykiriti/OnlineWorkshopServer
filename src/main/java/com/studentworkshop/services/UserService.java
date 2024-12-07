@@ -54,8 +54,7 @@ public class UserService {
         }
 
         String token = tokenService.generateTokenForUser(user);
-        String resetLink = "http://localhost:3000/reset-password?token=" + token;
-
+String resetLink = "https://onlineworkshop-server-production.up.railway.app/reset-password?token=" + token;
         emailService.sendPasswordResetEmail(email, resetLink);
     }
 
