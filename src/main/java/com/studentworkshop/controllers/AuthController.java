@@ -22,6 +22,7 @@ public class AuthController {
     @Autowired
     private PasswordService passwordService;
 
+    // Signup endpoint
     @PostMapping("/signup")
     public ResponseEntity<Map<String, String>> signup(@RequestBody User user) {
         Map<String, String> response = new HashMap<>();
@@ -40,15 +41,16 @@ public class AuthController {
             return ResponseEntity.badRequest().body(response);
         }
 
-        // Hash the password
+        // Hash the password and set default role
         user.setPassword(passwordService.hashPassword(user.getPassword()));
-        user.setRole("student"); // Default role can be set here
+        user.setRole("student");
         userService.saveUser(user);
 
         response.put("message", "Signup successful");
         return ResponseEntity.ok(response);
     }
 
+    // Login endpoint
     @PostMapping("/login")
     public ResponseEntity<Map<String, Object>> login(@RequestBody User user) {
         Map<String, Object> response = new HashMap<>();
@@ -65,6 +67,7 @@ public class AuthController {
         return ResponseEntity.status(401).body(response);  // Unauthorized status
     }
 
+    // Forgot password endpoint
     @PostMapping("/forgot-password")
     public ResponseEntity<Map<String, String>> forgotPassword(@RequestBody Map<String, String> request) {
         Map<String, String> response = new HashMap<>();
@@ -80,13 +83,13 @@ public class AuthController {
         }
     }
 
+    // Reset password endpoint
     @PostMapping("/reset-password")
-    public ResponseEntity<Map<String, String>> resetPassword(@RequestBody Map<String, String> request) {
+    public ResponseEntity<Map<String, String>> resetPassword(@RequestParam String token, @RequestParam String newPassword) {
         Map<String, String> response = new HashMap<>();
-        String token = request.get("token");
-        String newPassword = request.get("newPassword");
 
         try {
+            // Use token and newPassword to reset the password
             userService.resetPassword(token, newPassword);
             response.put("message", "Password reset successfully.");
             return ResponseEntity.ok(response);
