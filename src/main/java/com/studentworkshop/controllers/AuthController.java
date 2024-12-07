@@ -13,7 +13,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/auth")
-
+@CrossOrigin(origins = {"http://localhost:3000", "https://online-workshop-nine.vercel.app"})
 public class AuthController {
 
     @Autowired
@@ -23,56 +23,76 @@ public class AuthController {
     private PasswordService passwordService;
 
     @PostMapping("/signup")
-    public ResponseEntity<String> signup(@RequestBody User user) {
+    public ResponseEntity<Map<String, String>> signup(@RequestBody User user) {
+        Map<String, String> response = new HashMap<>();
+
+        // Check if the username already exists
         User existingUserByUsername = userService.findByUsername(user.getUsername());
         if (existingUserByUsername != null) {
-            return ResponseEntity.badRequest().body("Username already taken");
+            response.put("message", "Username already taken");
+            return ResponseEntity.badRequest().body(response);
         }
 
+        // Check if the email already exists
         User existingUserByEmail = userService.findByEmail(user.getEmail());
         if (existingUserByEmail != null) {
-            return ResponseEntity.badRequest().body("Email already exists");
+            response.put("message", "Email already exists");
+            return ResponseEntity.badRequest().body(response);
         }
 
+        // Hash the password
         user.setPassword(passwordService.hashPassword(user.getPassword()));
-        user.setRole("student"); 
+        user.setRole("student"); // Default role can be set here
         userService.saveUser(user);
-        return ResponseEntity.ok("Signup successful");
+
+        response.put("message", "Signup successful");
+        return ResponseEntity.ok(response);
     }
 
     @PostMapping("/login")
     public ResponseEntity<Map<String, Object>> login(@RequestBody User user) {
+        Map<String, Object> response = new HashMap<>();
+
+        // Check if the user exists by username
         User existingUser = userService.findByUsername(user.getUsername());
         if (existingUser != null && passwordService.verifyPassword(user.getPassword(), existingUser.getPassword())) {
-            Map<String, Object> response = new HashMap<>();
             response.put("message", "Login successful");
             response.put("role", existingUser.getRole());
             return ResponseEntity.ok(response);
         }
-        return ResponseEntity.status(401).body(Map.of("message", "Invalid credentials"));
+
+        response.put("message", "Invalid credentials");
+        return ResponseEntity.status(401).body(response);  // Unauthorized status
     }
 
     @PostMapping("/forgot-password")
-    public ResponseEntity<String> forgotPassword(@RequestBody Map<String, String> request) {
+    public ResponseEntity<Map<String, String>> forgotPassword(@RequestBody Map<String, String> request) {
+        Map<String, String> response = new HashMap<>();
         String email = request.get("email");
+
         try {
             userService.sendPasswordResetEmail(email);
-            return ResponseEntity.ok("Password reset link sent to email.");
+            response.put("message", "Password reset link sent to email.");
+            return ResponseEntity.ok(response);
         } catch (RuntimeException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
+            response.put("message", e.getMessage());
+            return ResponseEntity.badRequest().body(response);
         }
     }
 
     @PostMapping("/reset-password")
-    public ResponseEntity<String> resetPassword(@RequestBody Map<String, String> request) {
+    public ResponseEntity<Map<String, String>> resetPassword(@RequestBody Map<String, String> request) {
+        Map<String, String> response = new HashMap<>();
         String token = request.get("token");
         String newPassword = request.get("newPassword");
 
         try {
             userService.resetPassword(token, newPassword);
-            return ResponseEntity.ok("Password reset successfully.");
+            response.put("message", "Password reset successfully.");
+            return ResponseEntity.ok(response);
         } catch (RuntimeException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
+            response.put("message", e.getMessage());
+            return ResponseEntity.badRequest().body(response);
         }
     }
 }
