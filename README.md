@@ -1,8 +1,7 @@
 <h1 align="center">🚀 Online Workshop Server</h1>
 
 <p align="center">
-  <img src="https://media.giphy.com/media/xT9Ig3f0G0G5kE9E2g/giphy.gif" width="250" alt="3D Server Animation" />
-  <br />
+    <br />
   <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" width="200" alt="3D Gear Spinning" />
 </p>
 
