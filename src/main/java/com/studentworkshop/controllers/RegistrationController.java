@@ -1,17 +1,14 @@
 package com.studentworkshop.controllers;
-
 import com.studentworkshop.models.Registration;
 import com.studentworkshop.models.User;
 import com.studentworkshop.models.Workshop;
 import com.studentworkshop.services.RegistrationService;
 import com.studentworkshop.services.UserService;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
