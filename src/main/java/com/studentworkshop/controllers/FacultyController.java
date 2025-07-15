@@ -1,12 +1,9 @@
 package com.studentworkshop.controllers;
-
 import com.studentworkshop.models.Faculty;
 import com.studentworkshop.services.FacultyService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
