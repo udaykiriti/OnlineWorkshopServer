@@ -1,13 +1,10 @@
 package com.studentworkshop.controllers;
-
 import com.studentworkshop.models.User;
 import com.studentworkshop.services.UserService;
 import com.studentworkshop.services.PasswordService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.HashMap;
 import java.util.Map;
 
