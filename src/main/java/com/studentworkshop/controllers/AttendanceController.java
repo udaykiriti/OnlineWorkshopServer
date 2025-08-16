@@ -23,6 +23,7 @@ public class AttendanceController {
 
     private static final Logger logger = LoggerFactory.getLogger(AttendanceController.class);
 
+    //Attenance Posting endpoint
     @PostMapping("/mark")
     public ResponseEntity<Attendance> markAttendance(@RequestBody Attendance attendance) {
         try {
@@ -46,7 +47,7 @@ public class AttendanceController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
-
+    //Workshop List 
     @GetMapping("/workshop/{workshopId}")
     public ResponseEntity<List<Attendance>> getAttendanceByWorkshop(@PathVariable Long workshopId) {
         List<Attendance> attendanceList = attendanceService.getAttendanceByWorkshop(workshopId);
