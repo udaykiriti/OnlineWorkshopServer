@@ -63,8 +63,6 @@ public class UserController {
         User updatedUser = userService.saveUser(user);
         return ResponseEntity.ok(updatedUser);
     }
-
-
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);
@@ -80,6 +78,4 @@ public class UserController {
             ));
         return ResponseEntity.ok(genderSummary);
     }
-
-
 }  
