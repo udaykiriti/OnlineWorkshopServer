@@ -20,10 +20,10 @@ public class AttendanceController {
 
     @Autowired
     private RegistrationService registrationService;
-
+    //Logger frame work
     private static final Logger logger = LoggerFactory.getLogger(AttendanceController.class);
 
-    //Attenance Posting endpoint
+    //Attenance Posting endpoint present or absent by boolean values
     @PostMapping("/mark")
     public ResponseEntity<Attendance> markAttendance(@RequestBody Attendance attendance) {
         try {
@@ -47,7 +47,7 @@ public class AttendanceController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
-    //Workshop List 
+    //Workshop List Based on Workshop id
     @GetMapping("/workshop/{workshopId}")
     public ResponseEntity<List<Attendance>> getAttendanceByWorkshop(@PathVariable Long workshopId) {
         List<Attendance> attendanceList = attendanceService.getAttendanceByWorkshop(workshopId);
@@ -57,7 +57,7 @@ public class AttendanceController {
         }
         return ResponseEntity.ok(attendanceList);
     }
-
+    // Get Attendance by username 
     @GetMapping("/user/{username}")
     public ResponseEntity<List<Attendance>> getUserAttendance(@PathVariable String username) {
         List<Attendance> attendanceList = attendanceService.getUserAttendance(username);
@@ -67,7 +67,7 @@ public class AttendanceController {
         }
         return ResponseEntity.ok(attendanceList);
     }
-
+    // Get the participants of the workshop by workshop id
     @GetMapping("/workshop/{workshopId}/participants")
     public ResponseEntity<List<Registration>> getParticipantsByWorkshop(@PathVariable Long workshopId) {
         List<Registration> participants = registrationService.getRegisteredStudentsByWorkshop(workshopId);
