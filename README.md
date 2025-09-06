@@ -1,4 +1,4 @@
-<h1 align="center">🚀 Online Workshop Server</h1>
+<h1 align="center"> Online Workshop Server</h1>
 
 <p align="center">
     <br />
@@ -7,13 +7,13 @@
 
 ---
 
-# 📝 About This Repository
+#  About This Repository
 
 This repository contains the backend server for the Online Workshop application, built to enable seamless real-time interactions, content delivery, and user management for online workshops.
 
 ---
 
-## 🚀 Features
+##  Features
 
 - **User Authentication:** Secure login and registration.
 - **Session Management:** Real-time session tracking.
@@ -22,7 +22,7 @@ This repository contains the backend server for the Online Workshop application,
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - **Java:** Backend programming language.
 - **Spring Boot:** Framework for building REST APIs and services.
@@ -31,7 +31,7 @@ This repository contains the backend server for the Online Workshop application,
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 - `src/` — Main application source code.
 - `.mvn/` — Maven wrapper files.
@@ -40,7 +40,7 @@ This repository contains the backend server for the Online Workshop application,
 
 ---
 
-## 📦 Setup Instructions
+##  Setup Instructions
 
 Clone and run the project locally:
 
