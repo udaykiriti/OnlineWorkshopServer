@@ -16,19 +16,13 @@ This repository contains the backend server for the Online Workshop application,
 ##  Features
 
 - **User Authentication:** Secure login and registration.
-- **Session Management:** Real-time session tracking.
 - **Content Delivery:** Efficient streaming and distribution of workshop materials.
 - **Admin Dashboard:** Tools for admins to monitor and manage workshops.
-
 ---
-
 ##  Technologies Used
-
 - **Java:** Backend programming language.
 - **Spring Boot:** Framework for building REST APIs and services.
-- **WebSocket:** Real-time communication with clients.
 - **MySQL:** Persistent data storage for users and workshops.
-
 ---
 
 ##  Project Structure
