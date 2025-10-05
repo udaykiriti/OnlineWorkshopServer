@@ -14,8 +14,10 @@ import org.slf4j.LoggerFactory;
 
 /**
  * AttendanceController handles all REST API requests
+ * It handles the rest apis
  * related to attendance management in workshops.
  */
+
 @RestController
 @RequestMapping("/api/attendance")
 public class AttendanceController {
@@ -76,7 +78,7 @@ public class AttendanceController {
     public ResponseEntity<List<Attendance>> getAttendanceByWorkshop(@PathVariable Long workshopId) {
         List<Attendance> attendanceList = attendanceService.getAttendanceByWorkshop(workshopId);
 
-        // If no records found, return 204 (No Content)
+        // If no records , return 204 like no rec not found ...
         if (attendanceList.isEmpty()) {
             logger.warn("No attendance records found for workshopId: {}", workshopId);
             return ResponseEntity.noContent().build();
@@ -112,8 +114,9 @@ public class AttendanceController {
     public ResponseEntity<List<Registration>> getParticipantsByWorkshop(@PathVariable Long workshopId) {
         List<Registration> participants = registrationService.getRegisteredStudentsByWorkshop(workshopId);
 
-        // If no participants found, return 204 (No Content)
+        // If no participants then ->>, return 204 (No Content)
         if (participants.isEmpty()) {
+            // If no records found then log the not found msg
             logger.warn("No participants found for workshopId: {}", workshopId);
             return ResponseEntity.noContent().build();
         }
