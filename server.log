@@ -1,0 +1,87 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----< com.studentfeedbacksystem:student-online-workshop-backend >------
+[INFO] Building student-online-workshop-backend 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.3.4:run (default-cli) > test-compile @ student-online-workshop-backend >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ student-online-workshop-backend ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ student-online-workshop-backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ student-online-workshop-backend ---
+[INFO] skip non existing resourceDirectory /home/uday/proj/OnlineWorkshopServer/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ student-online-workshop-backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< spring-boot:3.3.4:run (default-cli) < test-compile @ student-online-workshop-backend <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.3.4:run (default-cli) @ student-online-workshop-backend ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.4)
+
+2026-01-15T08:53:48.011+05:30  INFO 6550 --- [student-online-workshop-backend] [  restartedMain] com.studentworkshop.StudentWorkshop      : Starting StudentWorkshop using Java 17.0.8 with PID 6550 (/home/uday/proj/OnlineWorkshopServer/target/classes started by uday in /home/uday/proj/OnlineWorkshopServer)
+2026-01-15T08:53:48.014+05:30  INFO 6550 --- [student-online-workshop-backend] [  restartedMain] com.studentworkshop.StudentWorkshop      : No active profile set, falling back to 1 default profile: "default"
+2026-01-15T08:53:48.067+05:30  INFO 6550 --- [student-online-workshop-backend] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-15T08:53:48.067+05:30  INFO 6550 --- [student-online-workshop-backend] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-15T08:53:48.749+05:30  INFO 6550 --- [student-online-workshop-backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-15T08:53:48.823+05:30  INFO 6550 --- [student-online-workshop-backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 6 JPA repository interfaces.
+2026-01-15T08:53:49.644+05:30  INFO 6550 --- [student-online-workshop-backend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-01-15T08:53:49.661+05:30  INFO 6550 --- [student-online-workshop-backend] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-15T08:53:49.661+05:30  INFO 6550 --- [student-online-workshop-backend] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-01-15T08:53:49.719+05:30  INFO 6550 --- [student-online-workshop-backend] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-15T08:53:49.721+05:30  INFO 6550 --- [student-online-workshop-backend] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1651 ms
+2026-01-15T08:53:49.899+05:30  INFO 6550 --- [student-online-workshop-backend] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-15T08:53:49.956+05:30  INFO 6550 --- [student-online-workshop-backend] [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-01-15T08:53:49.992+05:30  INFO 6550 --- [student-online-workshop-backend] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-01-15T08:53:50.304+05:30  INFO 6550 --- [student-online-workshop-backend] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-15T08:53:50.336+05:30  INFO 6550 --- [student-online-workshop-backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-01-15T08:53:50.441+05:30  INFO 6550 --- [student-online-workshop-backend] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@327d9d86
+2026-01-15T08:53:50.443+05:30  INFO 6550 --- [student-online-workshop-backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-01-15T08:53:51.511+05:30  INFO 6550 --- [student-online-workshop-backend] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-15T08:53:51.567+05:30  INFO 6550 --- [student-online-workshop-backend] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-15T08:53:52.008+05:30  INFO 6550 --- [student-online-workshop-backend] [  restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-15T08:53:52.407+05:30  WARN 6550 --- [student-online-workshop-backend] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-15T08:53:52.779+05:30  WARN 6550 --- [student-online-workshop-backend] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2026-01-15T08:53:52.801+05:30  WARN 6550 --- [student-online-workshop-backend] [  restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-01-15T08:53:52.804+05:30  INFO 6550 --- [student-online-workshop-backend] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-15T08:53:52.807+05:30  INFO 6550 --- [student-online-workshop-backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-01-15T08:53:52.811+05:30  INFO 6550 --- [student-online-workshop-backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-01-15T08:53:52.826+05:30  INFO 6550 --- [student-online-workshop-backend] [  restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-01-15T08:53:52.844+05:30 ERROR 6550 --- [student-online-workshop-backend] [  restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.362 s
+[INFO] Finished at: 2026-01-15T08:53:52+05:30
+[INFO] ------------------------------------------------------------------------
