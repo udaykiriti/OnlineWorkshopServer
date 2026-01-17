@@ -1,8 +1,10 @@
 <h1 align="center"> Online Workshop Server</h1>
 
 <p align="center">
-    <br />
-  <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" width="200" alt="3D Gear Spinning" />
+  <br />
+  <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif"
+       width="320"
+       alt="3D Gear Spinning" />
 </p>
 
 ---
@@ -15,7 +17,7 @@ This repository contains the backend server for the Online Workshop application,
 
 ## Features
 
-- **User Authentication:** Secure login and registration with Argon2 hashing.
+- **User Authentication:** Secure login and registration.
 - **Content Delivery:** Management and distribution of workshop materials (PDFs, Docs).
 - **Attendance System:** Track and record student participation in workshops.
 - **Admin & Faculty Dashboards:** Specialized tools for system management and workshop instruction.
@@ -49,6 +51,7 @@ On application startup, the following accounts are automatically created for tes
 ### Prerequisites
 - **Java 17** or higher installed.
 - **MariaDB** server running on `localhost:3306`.
+- **Mysql** change credentials in "application.properties".
 
 ### Running Locally
 
